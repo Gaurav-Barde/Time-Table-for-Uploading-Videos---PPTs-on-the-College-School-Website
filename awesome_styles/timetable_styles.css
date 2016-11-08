@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans',verdana, sans-serif;
+}
+
+a:active, a:link, a:visited {
+  color: black;
+}
+
+header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header .logo {
+  margin: 10px;
+}
+
+header .logo span {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  padding-top: 13px;
+  box-sizing: border-box;
+  font-weight: 700;
+  border-radius: 5px;
+  background: #CCC;
+}
+header h1 {
+  font-size: 1.8em;
+  color: #191d37;
+}
+
+
+/* Navigation Styles */
+nav {
+  position: fixed;
+  top: 0;
+}
+
+
+
+#menuTrigger {
+  position: fixed;
+  top: 0;
+  left: -20px;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: -10px;
+  z-index: 10;
+  width: 180px;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+.menu * {
+  backface-visibility: hidden;
+}
+
+.menu h3 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  margin: 0;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 56px;
+  color: #FFF;
+  transform: translate(-170px, 0);
+  transition: transform 0.4s ease-in-out;
+
+}
+.menu .links {
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  color: #ccc;
+  margin: 76px 0 0 0;
+  padding: 0;
+}
+.menu .link {
+  font-size: 16px;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.4s ease-in-out;
+}
+.menu .link:nth-child(1) {
+  transform: translate(-100%, 0);
+}
+.menu .link:nth-child(2) {
+  transform: translate(-200%, 0);
+}
+.menu .link:nth-child(3) {
+  transform: translate(-300%, 0);
+}
+.menu .link:nth-child(4) {
+  transform: translate(-400%, 0);
+}
+.menu .link:nth-child(5) {
+  transform: translate(-500%, 0);
+}
+.menu .link:nth-child(6) {
+  transform: translate(-600%, 0);
+}
+.menu .link:nth-child(7) {
+  transform: translate(-700%, 0);
+}
+.menu .link:nth-child(8) {
+  transform: translate(-800%, 0);
+}
+
+.menu .link:nth-child(9) {
+  transform: translate(-900%, 0);
+}
+.menu .link a {
+  display: block;
+  color: currentColor;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+/* style for the academic structure link */
+.menu .link:last-child a {
+  color: #18b0b1;
+  margin-top: 22px;
+}
+
+.menu .link a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.menu .trigger {
+  position: absolute;
+  z-index: 0;
+  top: 10px;
+  left: 10px;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.4s ease-in-out;
+  transition-property: transform, box-shadow;
+  transform: translate(0, 0);
+  box-shadow: 0 0 0 0px #424242;
+}
+.menu .trigger:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  /*overflow: hidden;*/
+  transform: translate(0, 0);
+  transition: box-shadow 0.2s 0.4s ease-in-out;
+  box-shadow: 0 0 0 28px #424242 inset, 0 0 0 28px #FF5722 inset;
+}
+
+.menu .trigger .line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: white;
+  height: 2px;
+  width: 18.66667px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.4s ease-in-out;
+}
+
+
+/* Checked actions */
+.menu .trigger .line:nth-child(1) {
+  transform: translateY(-5px) translate(-50%, -50%);
+}
+.menu .trigger .line:nth-child(3) {
+  transform: translateY(5px) translate(-50%, -50%);
+}
+#menuTrigger:checked ~ .menu {
+  pointer-events: auto;
+}
+#menuTrigger:checked ~ .menu h3 {
+  transform: translate(0, 0);
+  transition-delay: 0.2s;
+}
+#menuTrigger:checked ~ .menu .link {
+  transition-delay: 0.2s;
+}
+#menuTrigger:checked ~ .menu .link:nth-child(1) {
+  transform: translate(0, 0);
+}
+#menuTrigger:checked ~ .menu .link:nth-child(2) {
+  transform: translate(0, 0);
+}
+#menuTrigger:checked ~ .menu .link:nth-child(3) {
+  transform: translate(0, 0);
+}
+#menuTrigger:checked ~ .menu .link:nth-child(4) {
+  transform: translate(0, 0);
+}
+#menuTrigger:checked ~ .menu .link:nth-child(5) {
+  transform: translate(0, 0);
+}
+#menuTrigger:checked ~ .menu .link:nth-child(6) {
+  transform: translate(0, 0);
+}
+#menuTrigger:checked ~ .menu .link:nth-child(7) {
+  transform: translate(0, 0);
+}
+#menuTrigger:checked ~ .menu .link:nth-child(8) {
+  transform: translate(0, 0);
+}
+
+#menuTrigger:checked ~ .menu .trigger {
+  transform: translate(94px, 0);
+  box-shadow: 0 0 0 340px #424242;
+}
+#menuTrigger:checked ~ .menu .trigger:before {
+  transition-delay: 0s;
+  box-shadow: 0 0 0 0 #424242 inset, 0 0 0 28px #FF5722 inset;
+}
+#menuTrigger:checked ~ .menu .trigger .line:nth-child(1) {
+    transform: translateY(0) translate(-50%, -50%);
+}
+#menuTrigger:checked ~ .menu .trigger .line:nth-child(3) {
+    transform: translateY(0) translate(-50%, -50%);
+}
+
+
+
+
+.blockDetails {
+  text-align: center;
+  padding: 0 15px;
+  color: #222222;
+  margin-bottom: 20px;
+}
+.blockDetails:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.blockDetails h2 {
+  font-weight: normal;
+}
+.blockDetails .block-name {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  color: #2c0eb5;
+}
+.blockDetails .week, .blockDetails .blockCo {
+  font-size: 0.9em;
+}
+.blockDetails .week span, .blockDetails .blockCo span {
+  border-bottom: 1px solid #aaaaaa;
+}
+.blockDetails .week {
+  float: left;
+}
+.blockDetails .blockCo {
+  float: right;
+}
+
+.timeTable {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+.timeTable table, .timeTable th, .timeTable td {
+  border: 1px solid #aaaaaa;
+  border-collapse: collapse;
+  padding: 15px;
+}
+.timeTable .daysTable, .timeTable th {
+  background: #685292;
+}
+.timeTable table {
+  margin: 0 auto;
+}
+.timeTable td:first-child, .timeTable th {
+  font-weight: bold;
+  color: #dddddd;
+}
+
+.lecture-venue, .faculty-name {
+  display: inline-block;
+  color: #666;
+  font-size: 14px;
+}
+
+.lecture-venue {
+  margin-right: 60px;
+  margin-top: 5px;
+}
+
+.date {
+  font-size: 11px;
+  color: #bbb;
+}
+
+
+
+.timeTable .video, .timeTable .ppt {
+  display: inline-block;
+  font-size: 11px;
+  margin-top: 18px;
+  padding: 3px 5px 4px;
+  background: #c7bdda;
+  color: rgba(0, 0, 0, 0.9);
+  border-collapse: collapse;
+  transition: all 100ms ease-in-out;
+}
+.timeTable .video:hover, .timeTable .ppt:hover {
+  background: #685292;
+  color: #FFF;
+  transform: scale(1.1);
+}
+.timeTable .video {
+  border-right: 1px solid black;
+  border-radius: 0.3em 0 0 0.3em;
+}
+.timeTable .ppt {
+  border-radius: 0 0.3em 0.3em 0;
+  padding-right: 10px;
+}
+.timeTable .lunch {
+  background: url(lunch-icon.png) no-repeat center;
+  background-size: 35px 35px;
+  padding-top: 90px;
+  font-size: 15px;
+  color: #999999;
+}
+
+/*
+.holiday {
+  position: relative;
+}
+
+.holiday .festival-name {
+  color: #685292;
+  font-weight: 700;
+  font-size: 20px;
+  border: none;
+  position: absolute;
+  width: 68%;
+}*/
+
+@media (min-width: 1160px) {
+  .timeTable {
+    padding: 0 60px;
+  }
+
+  .week {
+    margin-left: 55px;
+  }
+
+  .blockCo {
+    margin-right: 55px;
+  }
+}
